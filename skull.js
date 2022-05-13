@@ -1,6 +1,6 @@
 const { token } = require('./config.json')
 const { Client, Intents } = require('discord.js')
-const { SlashCommandAssertions, SlashCommandBuilder } = require('@discordjs/builders')
+const { SlashCommandBuilder } = require('@discordjs/builders')
 const { Skull } = require('./Game.js')
 
 const bot = new Client({

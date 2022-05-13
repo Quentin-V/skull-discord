@@ -4,7 +4,7 @@ class Skull {
     constructor(users, bot, inter) {
         this.players = users.map(u => new Player(u))
         this.bot = bot
-        this.message = inter.
+        this.inter = inter
         this.start()
     }
 
@@ -17,7 +17,7 @@ class Skull {
         btnSkull.setCustomId('skull')
         const actionRow = new MessageActionRow()
         actionRow.addComponents([btnFlower, btnSkull])
-        inter.editReply({content: `Game started!`, components: [actionRow]})
+        this.inter.editReply({content: `Game started!`, components: [actionRow]})
     }
 }
 
@@ -34,4 +34,8 @@ class Player {
         const rand = Math.random()
         if(rand < 1 / (this.cardCount + 1)) this.hasSkull = false
     }
+}
+
+module.exports = {
+    Skull : Skull
 }
