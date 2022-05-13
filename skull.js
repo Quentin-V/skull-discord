@@ -40,8 +40,8 @@ bot.on('interactionCreate', (inter) => {
 	if (inter.commandName === 'start') start(inter)
 })
 
-function start(inter) {
-    inter.deferReply()
+async function start(inter) {
+    await inter.deferReply()
 	const users = []
 	for (let i = 1; i <= 8; ++i) {
 		const u = inter.options.getUser(`joueur${i}`)

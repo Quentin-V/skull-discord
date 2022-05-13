@@ -9,14 +9,9 @@ class Skull {
     }
 
     start() {
-        const btnFlower = new MessageButton()
-        btnFlower.setLabel('Place flower')
-        btnFlower.setCustomId('flower')
-        const btnSkull = new MessageButton()
-        btnSkull.setLabel('Place skull')
-        btnSkull.setCustomId('skull')
-        const actionRow = new MessageActionRow()
-        actionRow.addComponents([btnFlower, btnSkull])
+        const btnFlower = new MessageButton().setLabel('Place flower').setCustomId('flower').setStyle('PRIMARY')
+        const btnSkull = new MessageButton().setLabel('Place skull').setCustomId('skull').setStyle('PRIMARY')
+        const actionRow = new MessageActionRow().addComponents([btnFlower, btnSkull])
         this.inter.editReply({content: `Game started!`, components: [actionRow]})
     }
 }
